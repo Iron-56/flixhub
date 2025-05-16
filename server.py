@@ -12,8 +12,8 @@ base = "https://api.themoviedb.org/3/"
 
 app = Flask(__name__)
 
-apikey = "0b287532a046fa5108d2154118a67d9f"
-app.secret_key = 'hello123'
+apikey = os.getenv(API_KEY)
+app.secret_key = os.getenv(
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.update(
